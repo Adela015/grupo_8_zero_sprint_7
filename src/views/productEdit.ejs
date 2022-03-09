@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesIndex.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/StylesAddproduct.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/003cc75b52.js" crossorigin="anonymous"></script>
+    <title>ZERO | Agregar o Editar Productos</title>
+</head>
+<body>
+    
+    <!------------------------------HEADER-------------------------------->
+    <%- include('./partials/header')%> 
+
+
+    <h1 class="titulo">Agregar o Editar Productos</h1>
+
+    <!--------------------------------FORM---------------------------------->
+
+    <div class="contenedor-form">        
+        <form class="product-form" action="/products/productEdit/<%=producto.id%>?_method=put" method="POST" enctype="multipart/form-data">
+
+<!----------------------NOMBRE ALBUM-------------------------->
+
+            <div class="controlador-form">
+                <label for="product-name">Nombre del Album</label>
+                <input class="input-style" type="text" name="productName" id="product-name" value="<%=producto.name%>" required>
+            </div>
+
+<!----------------------NOMBRE ARTISTA-------------------------->
+
+            <div class="controlador-form">
+                <label for="artist">Nombre del Artista</label>
+                <input class="input-style" type="text" name="productArt" id="artist" value="<%=producto.artist%>" required>
+            </div>
+
+<!----------------------GENERO ALBUM-------------------------->
+
+            <div class="controlador-form">
+                <label for="product-genre">Género</label>
+                <select class="input-style-category" name="productGenre" id="product-genre" required >
+                    <% for( let genero of generos ) { %>
+                        <option value="<%= genero.id %> "><%= genero.name %> </option>
+                    <% } %>
+                </select>
+            </div>
+
+<!----------------------DESCRIPCION-------------------------->
+
+            <div class="controlador-form">
+                <label for="product-description">Descripción del Producto</label>
+                <textarea class="text-area" name="productDescription" id="product-description" cols="30" rows="10" required><%=producto.description%></textarea>
+            </div>
+
+<!----------------------FORMATO-------------------------->
+
+            <div class="controlador-form">
+                <label for="product-category">Formato</label>
+                <select class="input-style-type" name="format" id="category" required> 
+                    <% for( let formato of formatos ) { %>
+                        <option value="<%= formato.id %>"><%= formato.name %> </option>
+                    <% } %>
+                </select>
+            </div>
+
+<!----------------------PRECIO-------------------------->
+
+            <div class="controlador-form">
+                <label for="product-price">Precio</label>
+                <input class="input-style" type="number" name="productPrice" id="product-price" value="<%=producto.price%>" required>
+            </div>
+
+<!----------------------AGREGAR IMAGEN-------------------------->
+
+            <div class="controlador-form-image">
+                <label class="input-image-boton" for="productImage">Agregar Imágen</label>
+                <input class="input-image" type="file" name="productImage" id="productImage" accept=".jpg,.png" required>
+            </div>   
+
+<!----------------------BOTON SUBMIT-------------------------->
+
+            <div class="controlador-form">
+                <button class="button-submit-product" type="submit">¡Agregar Producto!</button>
+            </div>
+        </form>
+    </div>
+
+<!------------------------------FOOTER--------------------------------->
+
+    <%- include ('./partials/footer') %>
+
+</body>
+</html>
