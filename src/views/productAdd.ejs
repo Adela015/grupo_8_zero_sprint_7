@@ -22,11 +22,7 @@
     <h1 class="titulo">Agregar Productos</h1>
 
 
-    <div class="errores-front">
-        <ul>
-
-        </ul>
-    </div>
+    
 
     <!--------------------------------FORM---------------------------------->
 
@@ -39,12 +35,20 @@
                 <label for="name">Nombre del Álbum</label>
                 <input class="input-style" type="text" name="name" id="name" required>
             </div>
+            
+            <div class="error-front" id="error-nombre">
+    
+            </div>
 
 <!----------------------NOMBRE ARTISTA-------------------------->
 
             <div class="controlador-form">
                 <label for="artist">Nombre del Artista</label>
                 <input class="input-style" type="text" name="artist" id="artist" required>
+            </div>
+
+            <div class="error-front" id="error-artista">
+    
             </div>
 
 <!----------------------GENERO ALBUM-------------------------->
@@ -65,6 +69,9 @@
                 <textarea class="text-area" name="description" id="description" cols="30" rows="10" required></textarea>
             </div>
             
+            <div class="error-front" id="error-descripcion">
+    
+            </div>
 <!----------------------FORMATO PRODUCTO-------------------------->
 
             <div class="controlador-form">
@@ -83,18 +90,26 @@
                 <input class="input-style" type="number" name="price" id="price" required>
             </div>
 
+            <div class="error-front" id="error-precio">
+    
+            </div>
+
 <!----------------------AGREGAR IMAGEN-------------------------->
 
             <div class="controlador-form-image">
                 <label class="input-image-boton" for="image">Agregar Imágen</label>
                 <input class="input-image" type="file" name="image" id="image" >
             </div>   
+
+            <div class="error-front" id="error-imagen">
+    
+            </div>
             
 
 <!----------------------BOTON SUBMIT-------------------------->
 
             <div class="controlador-form">
-                <button class="button-submit-product" type="submit">¡Agregar Producto!</button>
+                <button class="button-submit-product" type="submit" id="button">¡Agregar Producto!</button>
             </div>
         </form>
     </div>
