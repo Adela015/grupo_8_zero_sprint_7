@@ -35,7 +35,7 @@ window.addEventListener('load', function(){
 
         if (Object.keys(errores).length >= 1){
             errorCorreo.innerHTML = errores.correo;
-            errorCorreo.innerHTML = errores.contraseña;
+            errorContraseña.innerHTML = errores.contraseña;
         } else {
             form.submit()
         }
