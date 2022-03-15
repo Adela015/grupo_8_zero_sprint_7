@@ -40,8 +40,18 @@
 
                 <form action="/user/login" method="POST" id="form">
                     
-                    <input type="email" name="email" id="correo" placeholder="correo electrónico">               
+                    <input type="email" name="email" id="correo" placeholder="correo electrónico">    
+
+                    <div class="error-front" id="error-correo">
+
+                    </div>
+
                     <input type="password" name="contraseña" id="contra" placeholder="contraseña">
+
+                    <div class="error-front" id="error-contraseña">
+
+                    </div>   
+
                     <a href="#" style="color: black;">¿Olvidaste tu contraseña?</a>
                     <label for=""><input type="checkbox" name="remember" id="remember"> Recordarme</label><br>
                     <input type="submit" id="submit"value="Ingresar">
@@ -69,6 +79,6 @@
 
     <%- include ('./partials/footer') %> 
 
-
+    <script src="/js/validateLogin.js"></script>
 </body>
 </html>
