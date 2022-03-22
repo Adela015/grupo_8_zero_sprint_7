@@ -513,6 +513,11 @@ div.errores-front{
     color: red;
 }
 
+.error-front{
+    color: red;
+    
+}
+
 /*-----------------MEDIA QUERIE EXTRA PARA OCULTAR BUTTONS----------------*/ 
 
 @media (max-width:767px ) {
