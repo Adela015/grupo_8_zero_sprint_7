@@ -267,13 +267,13 @@ p.album-price i {
     cursor: pointer;
 }
 
-.fa-heart:hover{
+/* .fa-heart:hover{
     color: red;
 }
 
 .fa-heart:active{
     color: blue;
-}
+} */
 
 section i.fa-chevron-left{
     display: none;
