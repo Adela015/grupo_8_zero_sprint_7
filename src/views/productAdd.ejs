@@ -11,7 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/003cc75b52.js" crossorigin="anonymous"></script>
-    <title>ZERO | Agregar o Editar Productos</title>
+    <script src="/js/validateProduct.js"></script>
+    
+    <title>ZERO | Agregar Productos</title>
 </head>
 <body>
     
@@ -26,6 +28,13 @@
 
     <!--------------------------------FORM---------------------------------->
 
+    <div class='errores-front'>
+        <ul>
+
+        </ul>
+    </div>
+
+
     <div class="contenedor-form">        
         <form class="product-form" action="/products/productAdd" method="POST" enctype="multipart/form-data">
 
@@ -33,7 +42,7 @@
 
             <div class="controlador-form">
                 <label for="name">Nombre del Álbum</label>
-                <input class="input-style" type="text" name="name" id="name" required>
+                <input class="input-style" type="text" name="name" id="name" >
             </div>
             
             <div class="error-front" id="error-nombre">
@@ -44,7 +53,7 @@
 
             <div class="controlador-form">
                 <label for="artist">Nombre del Artista</label>
-                <input class="input-style" type="text" name="artist" id="artist" required>
+                <input class="input-style" type="text" name="artist" id="artist" >
             </div>
 
             <div class="error-front" id="error-artista">
@@ -55,7 +64,7 @@
 
             <div class="controlador-form">
                 <label for="genre">Género</label>
-                <select class="input-style-category" name="genre" id="genre" required> 
+                <select class="input-style-category" name="genre" id="genre" > 
                     <% genres.forEach(genre => { %>
                         <option value="<%=genre.id%>"><%=genre.name%></option>
                     <% }) %>
@@ -66,7 +75,7 @@
 
             <div class="controlador-form">
                 <label for="description">Descripción del Producto</label>
-                <textarea class="text-area" name="description" id="description" cols="30" rows="10" required></textarea>
+                <textarea class="text-area" name="description" id="description" cols="30" rows="10" ></textarea>
             </div>
             
             <div class="error-front" id="error-descripcion">
@@ -76,7 +85,7 @@
 
             <div class="controlador-form">
                 <label for="category">Formato</label>
-                <select class="input-style-category" name="format" id="format" required> 
+                <select class="input-style-category" name="format" id="format" > 
                     <% formats.forEach( format => { %>
                         <option value="<%=format.id%>"><%=format.name%></option>
                     <% }) %>
@@ -87,7 +96,7 @@
 
             <div class="controlador-form">
                 <label for="price">Precio</label>
-                <input class="input-style" type="number" name="price" id="price" required>
+                <input class="input-style" type="number" name="price" id="price" >
             </div>
 
             <div class="error-front" id="error-precio">
@@ -120,7 +129,7 @@
 
     <%- include ('./partials/footer') %>
 
-    <script src="/js/validateProductAdd.js"></script>
+    
 
 </body>
 </html>

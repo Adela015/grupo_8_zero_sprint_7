@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="/js/validateRegister.js"></script>
     <title>ZERO | Registro</title>
 
 </head>
@@ -22,15 +23,14 @@
 <div><h1>Registrate</h1></div>
 
 <div class="container">
+    
+    <div class="errores-front">
+        <ul>
+
+        </ul>
+    </div>
+    
     <form class="form-register" action="/user/register" method="post" enctype="multipart/form-data"> 
-        
-        
-        <div class="errores-front">
-            <ul>
-
-            </ul>
-        </div>
-
                     <div class="espacioRegister">
                         <label for="nombre" class="label-registro">Nombre:</label>
                         <input class="input-style" type="text" 
@@ -72,7 +72,8 @@
                         <label for="email" class="label-registro">E-mail:</label>
                         <input class="input-style" type="email" name="email" id="email" placeholder="" 
                         class="field"
-                        value="<%= locals.oldData ? oldData.email : null %>">
+                        value="<%= locals.oldData ? oldData.email : null %>" >
+                                        
 
                         <div class="error-front" id="error-email">
 
@@ -103,7 +104,7 @@
 
                     <div class="espacioRegister">
                         <label for="text" class="label-registro">Fecha de nacimiento:</label>
-                        <input class="input-style" type="date" name="fecha" class="calendario" >
+                        <input class="input-style" type="date" name="fecha" class="calendario" id="nacimiento" >
                     </div>
 
                     <div class="controlador-form-image">
@@ -119,6 +120,7 @@
                         <label for="terminos">Acepto los términos y condiciones</label>
                     </div>
 
+                    
                     <div class="espacioRegister" id="boxButton">
                         <button type="submit" class="boton1" id="button">REGISTRARME</button>
                     </div>
@@ -138,6 +140,6 @@
     <%- include ('./partials/footer') %> 
 
 
-    <script src="/js/validateRegister.js"></script>
+    
 </body>
 </html>
