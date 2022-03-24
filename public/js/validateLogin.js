@@ -2,10 +2,10 @@ window.addEventListener('load', function(){
 
 
     let form = document.querySelector('form')
-    let correo = document.querySelector('input#correo')
-    let contraseña = document.querySelector('input#contra')
+    let correo = document.querySelector('#correo')
+    let contraseña = document.querySelector('#contra')
     let erroresFront = document.querySelector('div.errores-front ul')
-    let button = document.querySelector('input#submit')
+    let button = document.querySelector('#submit')
 
     button.addEventListener('click', function(e){
 
@@ -25,7 +25,7 @@ window.addEventListener('load', function(){
         if (errores.length > 0) {
         
             e.preventDefault();
-
+            erroresFront.innerHTML = ''
             for (let i = 0; i < errores.length; i++) {
                 erroresFront.innerHTML += '<li>' + errores[i] + '</li>'
 

@@ -2,12 +2,13 @@ window.addEventListener('load', function(){
 
     
     let form = document.querySelector('form.form-register')
-    let nombre = document.querySelector('input#nombre')
-    let apellido = document.querySelector('input#apellido')
-    let email = document.querySelector('input#email')
-    let password = document.querySelector('input#contraseña')
-    let nacimiento = document.querySelector('input#nacimiento')
+    let nombre = document.querySelector('#nombre')
+    let apellido = document.querySelector('#apellido')
+    let email = document.querySelector('#email')
+    let password = document.querySelector('#contraseña')
+    let nacimiento = document.querySelector('#nacimiento')
     let avatar = document.querySelector('#avatar')
+    let ulErrores = document.querySelector('div.errores-front ul')
 
 
     form.addEventListener('submit', function(e){
@@ -51,8 +52,7 @@ window.addEventListener('load', function(){
         if (errores.length > 0) {
             e.preventDefault();
 
-            let ulErrores = document.querySelector('div.errores-front ul')
-
+            ulErrores.innerHTML = ''
             for (let i = 0; i < errores.length; i++) {
                 ulErrores.innerHTML += '<li>' + errores[i] + '</li>'
             }

@@ -87,6 +87,7 @@ form div label{
 
 .errores-front{
     color: red;
+    text-align: center;
 }
 
 @media (min-width: 450px) {

@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/003cc75b52.js" crossorigin="anonymous"></script>
-    <script src="/js/validateProduct.js"></script>
     <title>ZERO | Agregar o Editar Productos</title>
 </head>
 <body>
@@ -21,6 +20,12 @@
 
 
     <h1 class="titulo">Editar Productos</h1>
+
+    <div class="errores-front">
+        <ul>
+
+        </ul>
+    </div>
 
     <!--------------------------------FORM---------------------------------->
 
@@ -87,7 +92,7 @@
 <!----------------------BOTON SUBMIT-------------------------->
 
             <div class="controlador-form">
-                <button class="button-submit-product" type="submit">¡Agregar Producto!</button>
+                <button class="button-submit-product" type="submit" id="buttonSubmit">¡Agregar Producto!</button>
             </div>
         </form>
     </div>
@@ -95,6 +100,6 @@
 <!------------------------------FOOTER--------------------------------->
 
     <%- include ('./partials/footer') %>
-
+    <script src="/js/validateEditProduct.js"></script>
 </body>
 </html>

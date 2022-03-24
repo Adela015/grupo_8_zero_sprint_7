@@ -30,7 +30,7 @@ const productController = {
         console.log('----------------------------');
         console.log(req.body.category);
         db.Images.create({
-            url: req.file.filename
+            url: req.file ? req.file.filename : ''
         })
         .then(img => {
             console.log(img)
@@ -59,25 +59,29 @@ const productController = {
 
     editarAccion:(req,res) => {
         db.Images.create({
-            url: req.file.filename
+            url: req.file ? req.file.filename : ''
         })
         .then(img => {
             console.log(img)
-            db.Products.update({
-                name: req.body.productName,
-                artist: req.body.productArt,
-                IDImages:img.dataValues.id,
-                IDgenre: req.body.genre,
-                IDformat: req.body.format,
-                description: req.body.productDescription,
-                price: Number(req.body.productPrice),
-            },{
-                where: {
-                    id: req.params.id
-                }})
-                .then(function () {
-                    res.redirect("/products/productList")
-                })
+            db.Products.findByPk(req.params.id)
+            .then(function(producto){
+                db.Products.update({
+                    name: req.body.productName,
+                    artist: req.body.productArt,
+                    IDImages: req.file ? img.dataValues.id : producto.IDImages,
+                    IDgenre: req.body.genre,
+                    IDformat: req.body.format,
+                    description: req.body.productDescription,
+                    price: Number(req.body.productPrice),
+                },{
+                    where: {
+                        id: req.params.id
+                    }})
+                    .then(function () {
+                        res.redirect("/products/productList")
+                    })
+            })
+            
         })
     },
 

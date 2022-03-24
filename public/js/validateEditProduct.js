@@ -1,9 +1,9 @@
 let form = document.querySelector('form');
-let nombre = document.querySelector('#name');
+let nombre = document.querySelector('#product-name');
 let artista = document.querySelector('#artist');
-let descripcion = document.querySelector('#description');
-let precio = document.querySelector('#price');
-let imagen = document.querySelector('#image');
+let descripcion = document.querySelector('#product-description');
+let precio = document.querySelector('#product-price');
+let imagen = document.querySelector('#productImage');
 let button = document.querySelector('#buttonSubmit');
 let ulErrores = document.querySelector('div.errores-front ul')
 
@@ -47,17 +47,14 @@ window.addEventListener('load', function(){
         }
 
 
-        if(imagen.files.length == 0){
-            errores.push('Debes agregar una imágen al producto')
-        }
-
-
 
 
         if(errores.length > 0){
 
             e.preventDefault()
+
             ulErrores.innerHTML = ''
+            
             for(let i = 0; i < errores.length; i++){
                 ulErrores.innerHTML += '<li>' + errores[i] + '</li>'
             }

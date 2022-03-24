@@ -80,6 +80,11 @@ i.fa-user-circle{
     display: none;
 }
 
+.errores-front{
+    color: red;
+    text-align: center;
+}
+
 /*-------------------FILTROS---------------*/
 
 #filtros{
