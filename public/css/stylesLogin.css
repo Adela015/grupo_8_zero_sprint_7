@@ -24,6 +24,10 @@
         color: red;
     }
 
+    .error-front{
+        color:red;
+    }
+
     #boxLogin, #form{
         display: flex;
         flex-direction: column;
