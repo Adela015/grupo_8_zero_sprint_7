@@ -41,7 +41,9 @@
                         value="<%= locals.oldData ? oldData.nombre : null %>">
                         
                         <div class="error-front" id="error-nombre">
+                            <ul>
 
+                            </ul>
                         </div>
 
                         <% if (locals.errors && errors.nombre) { %>
@@ -58,7 +60,9 @@
                         value="<%= locals.oldData ? oldData.apellido : null %>">
                         
                         <div class="error-front" id="error-apellido">
-
+                            <ul>
+                                
+                            </ul>
                         </div>
 
                         <% if (locals.errors && errors.apellido) { %>
@@ -76,7 +80,9 @@
                                         
 
                         <div class="error-front" id="error-email">
+                            <ul>
 
+                            </ul>
                         </div>
 
                         <% if (locals.errors && errors.email) { %>
@@ -92,7 +98,9 @@
                         class="field" value="<%= locals.oldData ? oldData.contraseña : null %>">
 
                         <div class="error-front" id="error-contraseña">
+                            <ul>
 
+                            </ul>
                         </div>
 
                         <% if (locals.errors && errors.contraseña) { %>

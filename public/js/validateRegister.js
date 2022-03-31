@@ -3,12 +3,68 @@ window.addEventListener('load', function(){
     
     let form = document.querySelector('form.form-register')
     let nombre = document.querySelector('#nombre')
+    let errorNombre = document.querySelector('#error-nombre')
+
     let apellido = document.querySelector('#apellido')
+    let errorApellido = document.querySelector('#error-apellido')
+
     let email = document.querySelector('#email')
+    let errorEmail = document.querySelector('#error-email')
+
     let password = document.querySelector('#contraseña')
+    let errorPassword = document.querySelector('#error-contraseña')
+
     let nacimiento = document.querySelector('#nacimiento')
     let avatar = document.querySelector('#avatar')
+
     let ulErrores = document.querySelector('div.errores-front ul')
+
+
+    nombre.addEventListener('focus', function() {
+        errorNombre.innerHTML = ''
+    })
+
+    nombre.addEventListener('blur', function() {
+        if (nombre.value === ''){
+            errorNombre.innerHTML += '<li> Este campo no puede estar vacío </li>'
+        }
+    })
+
+
+    apellido.addEventListener('focus', function() {
+        errorApellido.innerHTML = ''
+    })
+
+    apellido.addEventListener('blur', function() {
+        if (apellido.value === ''){
+            errorApellido.innerHTML += '<li> Este campo no puede estar vacío </li>'
+        }
+    })
+
+
+    email.addEventListener('focus', function() {
+        errorEmail.innerHTML = ''
+    })
+
+
+    email.addEventListener('blur', function() {
+        if (email.value === ''){
+            errorEmail.innerHTML += '<li> Este campo no puede estar vacío </li>'
+        }
+    })
+
+
+    password.addEventListener('focus', function() {
+        errorPassword.innerHTML = ''
+    })
+
+
+    password.addEventListener('blur', function() {
+        if (password.value === ''){
+            errorPassword.innerHTML += '<li> Este campo no puede estar vacío </li>'
+        }
+    })
+
 
 
     form.addEventListener('submit', function(e){
