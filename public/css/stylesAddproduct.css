@@ -90,6 +90,10 @@ form div label{
     text-align: center;
 }
 
+.error-front{
+    color: red;
+}
+
 @media (min-width: 450px) {
     
 
